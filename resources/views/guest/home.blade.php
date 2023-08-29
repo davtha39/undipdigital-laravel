@@ -10,7 +10,7 @@
             <div class="col-md-6">
                 <ul class="nav nav-pills nav-justified">
                     <li class="nav-item">
-                        <a class="nav-link active" style="background-color: black;" data-toggle="pill" href="{{route('guest.ebook.index')}}">EBOOK</a>
+                        <a class="nav-link active" style="background-color: black;" href="{{route('guest.ebook.index')}}">EBOOK</a>
                     </li>
                 </ul>
                 <div class="tab-content">
@@ -38,7 +38,7 @@
                         <br>
                         <ul class="nav nav-pills nav-justified">
                             <li class="nav-item">
-                                <a class="nav-link active" data-toggle="pill" style="background-color: #10144c" href="{{route('guest.ebook.index')}}">
+                                <a class="nav-link active" style="background-color: #10144c" href="{{route('guest.ebook.index')}}">
                                     Lihat Selengkapnya 
                                     <i class="fas fa-arrow-circle-right"></i>
                                 </a>
@@ -51,7 +51,7 @@
             <div class="col-md-6">
                 <ul class="nav nav-pills nav-justified">
                     <li class="nav-item">
-                        <a class="nav-link " style="background-color: black;" data-toggle="pill" href="{{route('guest.ejournal.index')}}">EJOURNAL</a>
+                        <a class="nav-link " style="background-color: black;" href="{{route('guest.ejournal.index')}}">EJOURNAL</a>
                     </li>
                 </ul>
                 <div class="tab-content">
@@ -80,7 +80,7 @@
                         <br>
                         <ul class="nav nav-pills nav-justified">
                             <li class="nav-item">
-                                <a class="nav-link " data-toggle="pill" style="background-color: #10144c" href="{{route('guest.ejournal.index')}}">
+                                <a class="nav-link " style="background-color: #10144c" href="{{route('guest.ejournal.index')}}">
                                     Lihat Selengkapnya 
                                     <i class="fas fa-arrow-circle-right"></i>
                                 </a>
@@ -92,7 +92,7 @@
 
             <ul class="nav nav-pills nav-justified">
                 <li class="nav-item">
-                    <a class="nav-link active" style="background-color: black;" data-toggle="pill" href="{{route('guest.pamflet.index')}}">pamflet</a>
+                    <a class="nav-link active" style="background-color: black;" href="{{route('guest.pamflet.index')}}">pamflet</a>
                 </li>
             </ul>
             <div class="tab-content">
@@ -121,7 +121,7 @@
                     <br>
                     <ul class="nav nav-pills nav-justified">
                         <li class="nav-item">
-                            <a class="nav-link active" data-toggle="pill" style="background-color: #10144c" href="{{route('guest.pamflet.index')}}">
+                            <a class="nav-link active" style="background-color: #10144c" href="{{route('guest.pamflet.index')}}">
                                 Lihat Selengkapnya 
                                 <i class="fas fa-arrow-circle-right"></i>
                             </a>

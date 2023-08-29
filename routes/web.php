@@ -120,5 +120,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin/dashboard/pamflet/{pamflet_id}/download', [PamfletController::class, 'download'])->name('admin.pamflet.download');
 });
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/custom-404', function () {
+    return view('errors.404');
+})->name('custom-404');
+
 Route::get('logout', [LoginController::class,'logout']);

@@ -262,7 +262,6 @@
                         </p>
                         </a>
                     </li>
-                @endif
                     <li class="nav-item">
                         <a href="{{route('admin.ebook.index')}}" class="nav-link">
                     <i class="nav-icon fas fa-solid fa-file"></i>
@@ -287,14 +286,40 @@
                         </p>
                         </a>
                     </li>
+                @elseif (Auth::user()->role === "user")
+                    <li class="nav-item">
+                        <a href="{{route('user.ebook.index')}}" class="nav-link">
+                    <i class="nav-icon fas fa-solid fa-file"></i>
+                        <p>
+                            Ebook
+                        </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('user.ejournal.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-solid fa-bullhorn"></i>
+                        <p>
+                            Ejournal
+                        </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('user.pamflet.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-solid fa-newspaper"></i>
+                        <p>
+                            Pamflet
+                        </p>
+                        </a>
+                    </li>
                 @endif
+
                 </ul>
               </nav>
             <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->
         </aside>
-
+        @endif
         <!--main class="py-4"-->
         <main>
             @if (Auth::user())
