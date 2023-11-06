@@ -34,7 +34,7 @@ class PamfletController extends Controller
         $request->validate([
             'judul'=>'required',
             'deskripsi'=>'required',
-            'file'=>'required|mimes:pdf,docx,doc,ppt,pptx,xls,xlsx|max:10240'
+            'file'=>'required|mimes:pdf,docx,doc,ppt,pptx,jpg,jpeg,png,bmp|max:10240'
         ]);
 
         $pamflet = new Pamflet;
@@ -78,7 +78,7 @@ class PamfletController extends Controller
         $request->validate([
             'judul'=>'required',
             'deskripsi'=>'required',
-            'file'=>'nullable|mimes:pdf,docx,doc,ppt,pptx,xls,xlsx|max:10240'
+            'file'=>'nullable|mimes:pdf,docx,doc,ppt,pptx,xls,xlsx,jpg,jpeg,png,bmp|max:10240'
         ]);
 
         $pamflet = Pamflet::findOrFail($pamflet_id);

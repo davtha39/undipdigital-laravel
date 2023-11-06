@@ -34,4 +34,11 @@ class GuestPamfletController extends Controller
             'search' => $search
         ]);
     }
+
+    public function download($pamflet_id)
+    {
+        $pamflet = Pamflet::findOrFail($pamflet_id);
+        $filepamflet = public_path('file_pamflet/'.$pamflet->file);
+        return Response::download($filepamflet);
+    }
 }

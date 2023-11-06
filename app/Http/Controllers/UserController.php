@@ -75,7 +75,6 @@ class UserController extends Controller
         if ($request->password != null) {
             $user->password = Hash::make($request->password);
         }
-        // $user->role = 'user';
         if ($request->hasFile('foto')){
             $foto = request('foto')->getClientOriginalName();
             request()->file('foto')->move(public_path() . '/foto_user', $foto);

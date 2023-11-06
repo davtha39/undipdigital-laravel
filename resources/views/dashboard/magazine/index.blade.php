@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
         <div class="col-sm-6">
-            <h1 class="m-0">Ejournal</h1>
+            <h1 class="m-0">Magazine</h1>
         </div><!-- /.col -->    
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -16,7 +16,7 @@
                 @elseif (Auth::user()->role == 'user')
                     <a href="{{route('user.dashboard')}}">Dashboard</a></li>
                 @endif
-            <li class="breadcrumb-item active">Ejournal</li>
+            <li class="breadcrumb-item active">Magazine</li>
             </ol> 
         </div><!-- /.col -->
     </div><!-- /.row -->
@@ -25,9 +25,9 @@
     <div class="card">
         <div class="card-header">
             @if (Auth::user()->role == 'admin')
-                <a class="btn btn-success" href="{{route('admin.ejournal.create')}}">+ Tambah ejournal</a>
+                <a class="btn btn-success" href="{{route('admin.magazine.create')}}">+ Tambah Magazine</a>
             @elseif (Auth::user()->role == 'user')
-                <a class="btn btn-success" href="{{route('user.ejournal.create')}}">+ Tambah ejournal</a>
+                <a class="btn btn-success" href="{{route('user.magazine.create')}}">+ Tambah Magazine</a>
             @endif        </div>
         <div class="card-body">
             <table id="example3" class="table table-bordered table-striped">
@@ -42,15 +42,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($ejournal as $row)
+                    @foreach ($magazine as $row)
                         <tr>
                             <th scope="row">{{ ++$i }}</th>
                             <td>
                                 <a class="mailbox-attachment-name" style="color: black" href="
                                     @if (Auth::user()->role == 'admin')
-                                        {{route('admin.ejournal.show', $row->ejournal_id)}}
+                                        {{route('admin.magazine.show', $row->magazine_id)}}
                                     @elseif (Auth::user()->role == 'user')
-                                        {{route('user.ejournal.show', $row->ejournal_id)}}
+                                        {{route('user.magazine.show', $row->magazine_id)}}
                                     @endif
                                 ">
                                     {{$row->judul}}
@@ -61,9 +61,9 @@
                                 <div class="col" style="text-align: center">
                                     <a href="
                                         @if (Auth::user()->role == 'admin')
-                                            {{route('admin.ejournal.show', $row->ejournal_id)}}
+                                            {{route('admin.magazine.show', $row->magazine_id)}}
                                         @elseif (Auth::user()->role == 'user')
-                                            {{route('user.ejournal.show', $row->ejournal_id)}}
+                                            {{route('user.magazine.show', $row->magazine_id)}}
                                         @endif
                                     ">
                                         @if ($row->ext == "docx" || $row->ext == "doc")
@@ -93,16 +93,16 @@
                             <td>
                                 <form action="
                                     @if (Auth::user()->role == 'admin')
-                                        {{route('admin.ejournal.destroy', $row->ejournal_id)}}
+                                        {{route('admin.magazine.destroy', $row->magazine_id)}}
                                     @elseif (Auth::user()->role == 'user')
-                                        {{route('user.ejournal.destroy', $row->ejournal_id)}}
+                                        {{route('user.magazine.destroy', $row->magazine_id)}}
                                     @endif
                                 " method="POST">
                                     <a class="btn btn-primary btn-sm" href="
                                         @if (Auth::user()->role == 'admin')
-                                            {{route('admin.ejournal.show', $row->ejournal_id)}}
+                                            {{route('admin.magazine.show', $row->magazine_id)}}
                                         @elseif (Auth::user()->role == 'user')
-                                            {{route('user.ejournal.show', $row->ejournal_id)}}
+                                            {{route('user.magazine.show', $row->magazine_id)}}
                                         @endif
                                     ">
                                         <i class="fas fa-folder"></i>
@@ -111,9 +111,9 @@
                                     @if ($row->users->users_id == Auth::user()->users_id)
                                         <a class="btn btn-info btn-sm" href="
                                             @if (Auth::user()->role == 'admin')
-                                                {{route('admin.ejournal.edit', $row->ejournal_id)}}
+                                                {{route('admin.magazine.edit', $row->magazine_id)}}
                                             @elseif (Auth::user()->role == 'user')
-                                                {{route('user.ejournal.edit', $row->ejournal_id)}}
+                                                {{route('user.magazine.edit', $row->magazine_id)}}
                                             @endif
                                         ">
                                             <i class="fas fa-pencil-alt"></i>
@@ -138,7 +138,7 @@
     function showDeleteConfirmation() {
         Swal.fire({
             title: 'Konfirmasi Penghapusan User',
-            text: "Apakah anda yakin ingin menghapus ejournal ini?",
+            text: "Apakah anda yakin ingin menghapus magazine ini?",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#d33',

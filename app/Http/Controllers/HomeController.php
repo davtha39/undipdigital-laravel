@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Guideline;
+use App\Models\Magazine;
 use App\Models\Ebook;
-use App\Models\Ejournal;
 use App\Models\Pamflet;
 
 class HomeController extends Controller
@@ -26,12 +27,14 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $guideline = Guideline::with('users')->latest()->take(3)->get();
+        $magazine = Magazine::with('users')->latest()->take(3)->get();
         $ebook = Ebook::with('users')->latest()->take(3)->get();
-        $ejournal = Ejournal::with('users')->latest()->take(3)->get();
         $pamflet = Pamflet::with('users')->latest()->take(3)->get();
         return view('guest.home', compact(
+            'guideline',
+            'magazine',
             'ebook',
-            'ejournal',
             'pamflet'
         ));
     }

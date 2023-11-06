@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 
-class Ejournal extends Model
+class Magazine extends Model
 {
     use HasFactory;
-    protected $primaryKey = 'ejournal_id';
-    protected $table = 'ejournal';
+    protected $primaryKey = 'magazine_id';
+    protected $table = 'magazine';
     protected $fillable = [
         'judul',
         'deskripsi',

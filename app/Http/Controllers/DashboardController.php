@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Guideline;
+use App\Models\Magazine;
 use App\Models\Ebook;
-use App\Models\Ejournal;
 use App\Models\Pamflet;
 
 class DashboardController extends Controller
@@ -18,25 +19,29 @@ class DashboardController extends Controller
     public function adminDashboard()
     {
         $totaluser = User::count();
+        $totalguideline = Guideline::count();
+        $totalmagazine = Magazine::count();
         $totalebook = Ebook::count();
-        $totalejournal = Ejournal::count();
         $totalpamflet = Pamflet::count();
         return view('admin.dashboard', compact(
             'totaluser', 
+            'totalguideline',
+            'totalmagazine',
             'totalebook',
-            'totalejournal',
             'totalpamflet'
         ));
     }
 
     public function userDashboard()
     {
+        $totalguideline = Guideline::count();
+        $totalmagazine = Magazine::count();
         $totalebook = Ebook::count();
-        $totalejournal = Ejournal::count();
         $totalpamflet = Pamflet::count();
         return view('user.dashboard', compact( 
+            'totalguideline',
+            'totalmagazine',
             'totalebook',
-            'totalejournal',
             'totalpamflet'
         ));
     }

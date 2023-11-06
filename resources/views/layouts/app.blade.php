@@ -156,7 +156,7 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" role="button" href="#" data-auto-collapse-size="768"><i class="fas fa-bars"></i></a>
+                    {{-- <a class="nav-link" data-widget="pushmenu" role="button" href="#" data-auto-collapse-size="768"><i class="fas fa-bars"></i></a> --}}
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-widget="fullscreen" href="#" role="button">
@@ -209,7 +209,7 @@
                 @endif
             "class="brand-link">
                 <img src="{{asset('asset/undip-logo.png')}}" alt="Undip Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Undip Digital</span>
+                <span class="brand-text font-weight-light"><b>Undip</b> Digital</span>
             </a>
         
             <!-- Sidebar -->
@@ -263,18 +263,26 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('admin.ebook.index')}}" class="nav-link">
-                    <i class="nav-icon fas fa-solid fa-file"></i>
+                        <a href="{{route('admin.guideline.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-solid fa-bullhorn"></i>
                         <p>
-                            Ebook
+                            Guideline
                         </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('admin.ejournal.index')}}" class="nav-link">
+                        <a href="{{route('admin.magazine.index')}}" class="nav-link">
                         <i class="nav-icon fas fa-solid fa-bullhorn"></i>
                         <p>
-                            Ejournal
+                            Magazine
+                        </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('admin.ebook.index')}}" class="nav-link">
+                    <i class="nav-icon fas fa-solid fa-file"></i>
+                        <p>
+                            Ebook
                         </p>
                         </a>
                     </li>
@@ -288,18 +296,26 @@
                     </li>
                 @elseif (Auth::user()->role === "user")
                     <li class="nav-item">
-                        <a href="{{route('user.ebook.index')}}" class="nav-link">
-                    <i class="nav-icon fas fa-solid fa-file"></i>
+                        <a href="{{route('user.guideline.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-solid fa-bullhorn"></i>
                         <p>
-                            Ebook
+                            Guideline
                         </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('user.ejournal.index')}}" class="nav-link">
+                        <a href="{{route('user.magazine.index')}}" class="nav-link">
                         <i class="nav-icon fas fa-solid fa-bullhorn"></i>
                         <p>
-                            Ejournal
+                            Magazine
+                        </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('user.ebook.index')}}" class="nav-link">
+                    <i class="nav-icon fas fa-solid fa-file"></i>
+                        <p>
+                            Ebook
                         </p>
                         </a>
                     </li>

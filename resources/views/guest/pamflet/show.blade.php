@@ -17,7 +17,7 @@
 <div class="single-news">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg">
                 <div class="sn-container">
                     <div class="float-right">
                         <h6> <i class="fas fa-solid fa-eye"></i>  {{$pamflet->view_count}}</h6>
@@ -44,9 +44,21 @@
                     </div>
                 </div>
                 <div class="card-footer bg-white">
-                    @if($pamflet->ext == "pdf")
-                    <iframe src="{{asset('pdf_js/web/viewer.html')}}?file={{asset('/file_pamflet')}}/{{$pamflet->file}}" 
-                        align="top" height="1000" width="100%" frameborder="0" scrolling="auto"></iframe>
+                    @if ($pamflet->ext == "pdf")
+                        <iframe src="{{asset('pdf_js/web/viewer.html')}}?file={{asset('/file_pamflet')}}/{{$pamflet->file}}" 
+                            align="top" height="1000" width="100%" frameborder="0" scrolling="auto"></iframe>
+                    @elseif ($pamflet->ext == "jpg" || $pamflet->ext == "jpeg" || $pamflet->ext == "png" || $pamflet->ext == "bmp")
+                        <div class="justify-content-center align-items-center ">
+                            {{-- <a href="/file_pamflet/{{$pamflet->foto}}" data-toggle="lightbox" data-gallery="gallery" class="lightbox-link"> --}}
+                                <img src="/file_pamflet/{{$pamflet->file}}" width="100%" alt="Image 1" style="position: center;">
+                                <br><br>
+                                <div class="float-right">
+                                    <a href="{{route('guest.pamflet.download', $pamflet->pamflet_id)}}" class="btn btn-default">
+                                        <i class="fas fa-print"></i> Unduh
+                                    </a>    
+                                </div>
+                            {{-- </a> --}}
+                        </div><br>
                     @else
                         <ul class="mailbox-attachments d-flex align-items-stretch clearfix">
                             <li>

@@ -26,7 +26,7 @@
         </div>
         <h1 class="sn-title">Ebook</h1><br>
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col">
                 @foreach ($ebook as $ebooks)
                     <div class="row d-flex justify-content-center">
                         <div class="col">
@@ -50,7 +50,7 @@
                                 <div class="col-md-8">
                                     <div class="news-feed-text">
                                         <h5><a class="mailbox-attachment-name" style="color: black" href="{{route('guest.ebook.show', $ebooks->ebook_id)}}">{{$ebooks->judul}}</a></h5>
-                                        <span>{{Str::limit($ebooks->deskripsi, 200)}} ...<br></span>
+                                        <span>{{Str::limit($ebooks->deskripsi, 60)}} ...<br></span>
                                         <div class="float-right">
                                             <br>
                                             <h6> <i class="fas fa-solid fa-eye"></i>  {{$ebooks->view_count}}</h6>

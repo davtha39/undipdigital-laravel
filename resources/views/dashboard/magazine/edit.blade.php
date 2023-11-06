@@ -6,7 +6,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
       <div class="col-sm-6">
-          <h1 class="m-0">Ubah Pamflet</h1>
+          <h1 class="m-0">Magazine</h1>
       </div><!-- /.col -->    
       <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -16,20 +16,26 @@
               @elseif (Auth::user()->role == 'user')
                   <a href="{{route('user.dashboard')}}">Dashboard</a></li>
               @endif
-              <li class="breadcrumb-item">
-                @if (Auth::user()->role == 'admin')
-                  <a href="{{route('admin.pamflet.index')}}"></a>Pamflet</li>
-                @elseif (Auth::user()->role == 'user')
-                  <a href="{{route('user.pamflet.index')}}"></a>Pamflet</li>
-                @endif
-              <li class="breadcrumb-item active">Ubah Pamflet</li>
+          <li class="breadcrumb-item">            
+            @if (Auth::user()->role == 'admin')
+              <a href="{{route('admin.magazine.index')}}">Magazine</a></li>
+            @elseif (Auth::user()->role == 'user')
+              <a href="{{route('user.magazine.index')}}">Magazine</a></li>
+            @endif
+          <li class="breadcrumb-item active">Ubah Magazine</li>
           </ol> 
       </div><!-- /.col -->
     </div><!-- /.row -->
   </section><!-- /.container-fluid -->
 </section><!-- /.container-fluid -->
 <section class="content">
-  <form method="POST" action="{{route('admin.pamflet.update', $pamflet->pamflet_id)}}" enctype="multipart/form-data">      
+  <form method="POST" action="
+    @if (Auth::user()->role == 'admin')
+      {{route('admin.magazine.update', $magazine->magazine_id)}}
+    @elseif (Auth::user()->role == 'user')
+      {{route('user.magazine.update', $magazine->magazine_id)}}
+    @endif
+  " enctype="multipart/form-data">      
     @csrf
     @method('PUT')
     <div class="card card-primary">
@@ -38,16 +44,16 @@
               <div class="col">
                 <div class="form-group">
                   <label>Judul</label>
-                  <input class="form-control" name="judul" id="judul" value="{{$pamflet->judul}}">
+                  <input class="form-control" name="judul" id="judul" value="{{$magazine->judul}}">
                 </div>
                 <div class="form-group">
                   <label>Deskripsi</label>
-                  <textarea input class="form-control" name="deskripsi" id="deskripsi" rows="6">{{$pamflet->deskripsi}}</textarea>
+                  <textarea input class="form-control" name="deskripsi" id="deskripsi" rows="6">{{$magazine->deskripsi}}</textarea>
                 </div>
                 <div class="mb-3">
                   <label for="formFile" class="form-label">Unggah File (Opsional)</label>
-                  <input class="form-control" type="file" name="file" id="formFile" value="{{old('file', $pamflet->file)}}">
-                  <p class="red-text">Maksimal 10 MB<br>Format File yang diterima: JPG, JPEG, PNG, BMP, PDF, DOC, DOCX, PPT, PPTX, XLS, XLSX</p>
+                  <input class="form-control" type="file" name="file" id="formFile" value="{{old('file', $magazine->file)}}">
+                  <p class="red-text">Maksimal 10 MB<br>Format File yang diterima: PDF, DOC, DOCX, PPT, PPTX, XLS, XLSX</p>
                 </div>
               </div>
               <!-- /.col -->

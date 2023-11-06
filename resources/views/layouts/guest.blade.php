@@ -33,36 +33,8 @@
 <body class="d-flex flex-column min-vh-100">
     <section class="content">
         <div class="container-fluid">
-            <!-- Brand Start -->
-            <div class="brand" >
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-3 col-md-4">
-                            <div class="b-logo">
-                                <a href="{{url('/')}}">
-                                    <img src="{{asset('asset/undip-digital-logo.png')}}" alt="Logo">
-                                    {{-- <span class="brand-text font-weight-light"><h3>Undip Digital</h3></span> --}}
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-4">
-                            <div class="b-ads">
-
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4">
-                            <div class="b-search">
-                                <input type="text" placeholder="Search">
-                                <button><i class="fa fa-search"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Brand End -->
-
             <!-- Nav Bar Start -->
-            <div class="nav-bar" >
+            <div class="nav-bar sticky-top">
                 <div class="container">
                     <div class="navbar navbar-expand-md bg-dark navbar-dark" style="background-color: #10144c">
                         <a href="#" class="navbar-brand">MENU</a>
@@ -70,11 +42,30 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
 
+            <!-- Brand Start -->
+            <div class="brand" >              
+                <div class="row align-items-center">                  
+                    {{-- <div class="b-logo"> --}}
+                        <a href="{{url('/')}}">
+                            <img src="{{asset('asset/undip-digital-logo.png')}}" width="200px">
+                            {{-- <span class="brand-text font-weight-light"><h3>Undip Digital</h3></span> --}}
+                        </a>
+                    {{-- </div> --}}
+                </div>
+                <div class="col-lg-6 col-md-4">
+                    <div class="b-ads">
+
+                    </div>
+                </div>   
+            </div>
+            <!-- Brand End -->
+
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto">
                                 <a href="{{route('guest.home')}}" class="nav-item nav-link">Home</a>
+                                <a href="{{route('guest.guideline.index')}}" class="nav-item nav-link">Guideline</a>
+                                <a href="{{route('guest.magazine.index')}}" class="nav-item nav-link">Magazine</a>
                                 <a href="{{route('guest.ebook.index')}}" class="nav-item nav-link">Ebook</a>
-                                <a href="{{route('guest.ejournal.index')}}" class="nav-item nav-link">Ejournal</a>
                                 <a href="{{route('guest.pamflet.index')}}" class="nav-item nav-link">Pamflet</a>
                             </div>
                             <div class="navbar-nav float-right">
@@ -94,11 +85,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 copyright">
-                    <p>Copyright &copy; <a href="https://htmlcodex.com">HTML Codex</a>. All Rights Reserved</p>
+                    <p>Copyright 2023 &copy; <a href="#">Humas Undip</a></p>
                 </div>
 
                 <div class="col-md-6 template-by">
-                    <p>Template By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                    <p><a href="https://undip.ac.id">undip.ac.id</a></p>
                 </div>
             </div>
         </div>

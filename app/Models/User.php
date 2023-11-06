@@ -39,14 +39,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function guideline()
+    {
+        return $this->hasMany(Guideline::class, 'users_id','users_id');
+    }
+
+    public function magazine()
+    {
+        return $this->hasMany(Magazine::class, 'users_id','users_id');
+    }
+
     public function ebook()
     {
         return $this->hasMany(Ebook::class, 'users_id', 'users_id');
-    }
-
-    public function ejournal()
-    {
-        return $this->hasMany(EJournal::class, 'users_id','users_id');
     }
 
     public function pamflet()

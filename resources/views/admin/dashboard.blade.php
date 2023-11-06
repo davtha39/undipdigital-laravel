@@ -35,6 +35,32 @@
     </div>
     <div class="row">
       <div class="col">
+        <div class="small-box bg-info">
+          <div class="inner">
+            <h3>{{$totalguideline}}</h3>
+
+            <p>Guideline</p>
+          </div>
+          <div class="icon">
+            <i class="fa fa-file"></i>
+          </div>
+          <a href="{{route('admin.guideline.index')}}" class="small-box-footer">Lihat Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+      </div>
+      <div class="col">
+        <div class="small-box bg-info">
+          <div class="inner">
+            <h3>{{$totalmagazine}}</h3>
+
+            <p>Magazine</p>
+          </div>
+          <div class="icon">
+            <i class="fa fa-file"></i>
+          </div>
+          <a href="{{route('admin.magazine.index')}}" class="small-box-footer">Lihat Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+      </div>
+      <div class="col">
         <!-- small box -->
         <div class="small-box bg-info">
           <div class="inner">
@@ -46,19 +72,6 @@
             <i class="fa fa-file"></i>
           </div>
           <a href="{{route('admin.ebook.index')}}" class="small-box-footer">Lihat Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
-        </div>
-      </div>
-      <div class="col">
-        <div class="small-box bg-info">
-          <div class="inner">
-            <h3>{{$totalejournal}}</h3>
-
-            <p>E-Journal</p>
-          </div>
-          <div class="icon">
-            <i class="fa fa-file"></i>
-          </div>
-          <a href="{{route('admin.ejournal.index')}}" class="small-box-footer">Lihat Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <div class="col">

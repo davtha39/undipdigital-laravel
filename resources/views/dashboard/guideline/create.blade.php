@@ -5,7 +5,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0">Tambah Pamflet</h1>
+          <h1 class="m-0">Tambah guideline</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -17,22 +17,22 @@
             @endif
             <li class="breadcrumb-item">
               @if (Auth::user()->role == 'admin')
-                <a href="{{route('admin.pamflet.index')}}"></a>Pamflet</li>
+                <a href="{{route('admin.guideline.index')}}">Guideline</a></li>
               @elseif (Auth::user()->role == 'user')
-                <a href="{{route('user.pamflet.index')}}"></a>Pamflet</li>
+                <a href="{{route('user.guideline.index')}}">Guideline</a></li>
               @endif
-            <li class="breadcrumb-item active">Tambah Pamflet</li>
+            <li class="breadcrumb-item active">Tambah Guideline</li>
           </ol> 
         </div><!-- /.col -->
       </div><!-- /.row -->
 </section><!-- /.container-fluid -->
 <section class="content">
   <form method="POST" action="
-  @if (Auth::user()->role == 'admin')
-  {{route('admin.pamflet.store')}}
-  @elseif (Auth::user()->role == 'user')
-    {{route('user.pamflet.store')}}
-  @endif
+    @if (Auth::user()->role == 'admin')
+      {{route('admin.guideline.store')}}
+    @elseif (Auth::user()->role == 'user')
+      {{route('user.guideline.store')}}
+    @endif
   " enctype="multipart/form-data">      
     @csrf
     <div class="card card-primary">
@@ -50,7 +50,7 @@
                 <div class="mb-3">
                   <label for="formFile" class="form-label">Unggah File</label>
                   <input class="form-control" type="file" name="file" id="formFile">
-                  <p class="red-text">Maksimal 10 MB<br>Format File yang diterima: JPG, JPEG, PNG, BMP, PDF, DOC, DOCX, PPT, PPTX, XLS, XLSX</p>
+                  <p class="red-text">Maksimal 10 MB<br>Format File yang diterima: PDF, DOC, DOCX, PPT, PPTX, XLS, XLSX</p>
                 </div>
               </div>
               <!-- /.col -->
